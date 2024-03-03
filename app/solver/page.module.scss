@@ -1,0 +1,55 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+}
+
+.header {
+  h2 {
+    font-size: 16px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+}
+
+.body {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: inherit;
+  font-size: 0.85rem;
+  max-width: var(--max-width);
+  width: 100%;
+  z-index: 2;
+  font-family: var(--font-mono);
+
+  table {
+    border: 2px solid #000;
+    border-collapse: collapse;
+  }
+}
+
+.input {
+  border: 1px solid #000;
+  height: 25px;
+  padding: 0;
+  text-align: center;
+  width: 25px;
+}
+
+.bottom {
+  border-bottom: 2px solid #000;
+}
+
+.right {
+  border-right: 2px solid #000;
+}
+
+.solveBtn {
+  font-weight: bold;
+  height: 40px;
+  margin-top: 2rem;
+  width: 100px;
+}
