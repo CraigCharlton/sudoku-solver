@@ -1,3 +1,5 @@
+@import "../variables";
+
 .main {
   display: flex;
   flex-direction: column;
@@ -9,8 +11,12 @@
     text-align: center;
   }
 
+  p {
+    color: $textColor;
+  }
+
   .link {
-    color: black;
+    color: $primaryColor;
     font-weight: bold;
     text-decoration: none;
   }

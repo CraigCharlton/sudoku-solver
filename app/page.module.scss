@@ -1,32 +1,55 @@
+@import "variables";
+
 .main {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 6rem;
+  padding: 6rem 2rem;
+
+  p {
+    color: $textColor;
+    text-align: center;
+  }
+}
+
+.header {
+  text-align: center;
 }
 
 .body {
+  @media (min-width: $largeScreen) {
+    flex-flow: row;
+    margin: 40px 0;
+    max-width: 720px;
+  }
+
   align-items: center;
+  background-color: white;
+  border-radius: 20px;
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   font-size: 0.85rem;
-  height: 300px;
   justify-content: center;
+  max-width: 100%;
 }
 
 .section {
+  @media (min-width: $largeScreen) {
+    max-width: 400px;
+  }
+
   align-items: center;
-  background: #eee;
-  border: 1px solid black;
-  border-radius: 6px;
+  background-color: $mainBackgroundColor;
+  border-radius: 20px;
   display: flex;
   flex-flow: column;
   font-size: 0.85rem;
   height: 250px;
   justify-content: center;
-  margin: 0 20px;
-  width: 400px;
+  margin: 20px;
+  min-height: 320px;
+  width: 92%;
 
   p {
     margin: 30px;
@@ -34,8 +57,12 @@
 }
 
 .link {
-  color: #000;
+  color: $primaryColor;
   font-size: 22px;
   font-weight: bold;
   text-decoration: none;
+}
+
+.warning {
+  color: white;
 }

@@ -1,3 +1,5 @@
+@import "../variables";
+
 .main {
   display: flex;
   flex-direction: column;
@@ -24,27 +26,39 @@
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
-
-  table {
-    border: 2px solid #000;
-    border-collapse: collapse;
-  }
 }
 
 .input {
+  appearance: none;
   border: 1px solid #000;
   height: 25px;
+  margin: 0;
   padding: 0;
   text-align: center;
   width: 25px;
+
+  &::-webkit-inner-spin-button {
+    appearance: none;;
+  }
 }
 
-.bottom {
+.grid {
+  background-color: $secondaryColor;
+  border: 2px solid #000;
+  border-collapse: collapse;
+}
+
+.bottom div {
   border-bottom: 2px solid #000;
 }
 
-.right {
+.right input {
   border-right: 2px solid #000;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
 }
 
 .solveBtn {

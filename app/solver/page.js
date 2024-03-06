@@ -113,26 +113,25 @@ const SudokuSolver = () => {
         <h2>Craig Charlton</h2>
       </div>
       <div className={styles.body}>
-        <table>
-          <tbody>
-            {
-              // Create 9 rows and 9 columns below with an input in each.
-              // Styles added for every 3 row and column to add a border.
-              [0, 1, 2, 3, 4, 5, 6, 7, 8].map((row, rIndex) => {
-                return <tr key={rIndex} className={(row + 1) % 3 === 0 ? styles.bottom : ''}>
-                  {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((col, cIndex) => {
-                    return <td key={rIndex + cIndex} className={(col + 1) % 3 === 0 ? styles.right : ''}>
-                      <input onChange={(e) => onInput(e, row, col)}
-                        value={sudokuArr[row][col] === -1 ? '' : sudokuArr[row][col]}
-                        className={styles.input}
-                        maxLength={1} />
-                    </td>
-                  })}
-                </tr>
-              })
-            }
-          </tbody>
-        </table>
+        <div className={styles.grid}>
+          {
+            // Create 9 rows and 9 columns below with an input in each.
+            // Styles added for every 3 row and column to add a border.
+            [0, 1, 2, 3, 4, 5, 6, 7, 8].map((row, rIndex) => {
+              return <div key={rIndex} className={`${(row + 1) % 3 === 0 ? styles.bottom : ''} ${styles.row}`}>
+                {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((col, cIndex) => {
+                  return <div key={rIndex + cIndex} className={(col + 1) % 3 === 0 ? styles.right : ''}>
+                    <input onChange={(e) => onInput(e, row, col)}
+                      value={sudokuArr[row][col] === -1 ? '' : sudokuArr[row][col]}
+                      className={styles.input}
+                      type="number"
+                      max="1"/>
+                  </div>
+                })}
+              </div>
+            })
+          }
+        </div>
         <button onClick={solveSudoku} className={styles.solveBtn}>Solve!</button>
       </div>
     </main>
